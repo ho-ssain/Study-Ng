@@ -3,15 +3,16 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test": {
+    "ng-ecart": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
         "@schematics/angular:component": {
+          "style": "scss",
           "skipTests": true,
           "standalone": false
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
         },
         "@schematics/angular:directive": {
           "skipTests": true,
@@ -34,26 +35,27 @@
           "skipTests": true
         }
       },
-      "root": "projects/test",
-      "sourceRoot": "projects/test/src",
+      "root": "",
+      "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/test",
-            "index": "projects/test/src/index.html",
-            "browser": "projects/test/src/main.ts",
+            "outputPath": "dist/ng-ecart",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/test/tsconfig.app.json",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/test/src/favicon.ico",
-              "projects/test/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "projects/test/src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -85,10 +87,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "test:build:production"
+              "buildTarget": "ng-ecart:build:production"
             },
             "development": {
-              "buildTarget": "test:build:development"
+              "buildTarget": "ng-ecart:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -96,7 +98,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "test:build"
+            "buildTarget": "ng-ecart:build"
           }
         },
         "test": {
@@ -106,13 +108,14 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/test/tsconfig.spec.json",
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/test/src/favicon.ico",
-              "projects/test/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "projects/test/src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

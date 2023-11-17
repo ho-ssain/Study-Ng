@@ -1,88 +1,82 @@
 # Angular
 
-## What is Angular?
+**Angular**-:
 
---> open-source JS Framework
---> created and maintained by Google
---> completely written in TS
---> best for developing SPA
+Angular is one of the most popular javascript frameowrk for building client side application
+It is a development platform for building a single page application for mobile and desktop.
+It is used for building client-side-app using htlm, css and a programming language like javascript or typescript.
+It is not a programming langugae in itself like javascript.
+So, basically Angular is a JS framework which allows us to create Single-Page-Application (SPA).
 
-## What is TypeScript?
+**Framework**-:
 
---> TS is a Super-set of JS
---> enhanced version of JS with additional features
---> gets compiled to JS at the end
+A framework is like a platform for developing software application.
+A framework can have pre-defined classes and functions that can be re-used to add several functionalities, which otherwisw we would have to write from scratch by our own.
 
-## Why do we need a Framework?
+A framework is a collection of pre-defined classes and methods which provides APIs for performing different operations when used in an application.
 
---> easy for maintaining code
---> easy to structure our code in modules
---> code reuse
---> everything in one place
+**Single-Page-Application**-:
 
-## Why do we need Angular Framework?
+A SPA is a web app, which has only one html page, when we navigate around, only the content of that html page changes. The page itself never changes.
 
---> Angular is a framework
---> it is TS based
---> powerfull CLI
---> two-way binding
---> MVC based framework
---> uses Dependency injection
+**_What is the advantage of using SPA? Why do we want to create a SPA in the first place?_**
+Since we are using javascript to change the content of the page, it is much faster. Here we are not reaching out the server to request a new piece of HTML data, every time we navigate to a different url.
+This allows us to create an app which is fast and reactive.
 
-## SPA vs TWA
+**Why Angular**-:
 
-Single Page Applications (SPAs) and Traditional Web Applications are two different approaches to building web applications, each with its own set of characteristics and advantages. Here are some key points of comparison between SPAs and traditional web apps:
+Vanilla JS or Jquery code becomes hard to maintain and we will need a way to properly structure our app.
+A lot of app's built using Vanilla JS/JQuery is hard to test.
+There are some functionalities which we will have to write from scratch when using JS.
 
-**Single Page Applications (SPAs):**
+Advantages of using Angular-:
 
-1. **Page Loading:**
+1. Angular gives our app a clean and losely coupled structure that is easy to understand &maintain
+2. It brings a lot of utility code which can be re-used in lot of apps. Especially, when dealing with user navigation & browser history
+3. Apps built with Angular are more testable.
 
-   - **Characteristics:** SPAs load a single HTML page and dynamically update content as the user interacts with the application.
-   - **Advantages:** Faster initial loading times as only the required data is fetched, and subsequent interactions feel quicker due to reduced server round-trips.
+**Angular versions**-:
+Ajs
+A2
+A3
+|
+|
+|
+A17
 
-2. **User Experience:**
+- Angular Js was not designed with the need of today's app
+- Angular 2 was completely re-written from ground up with TS
+- It fixed all the issues which Angular 1 had
+- There had not been major changes after the release of Angular 2.
 
-   - **Characteristics:** SPAs provide a more seamless and fluid user experience, as there is no full page reload during navigation.
-   - **Advantages:** Enhanced user experience similar to that of a desktop application. Smooth transitions and interactions without noticeable delays.
+**Angular CLI**-:
 
-3. **Server Communication:**
+Angular CLI is a command line interface which we use to create new angular project or generate some boiler plate code as well as create deployable packages
 
-   - **Characteristics:** SPAs often rely heavily on AJAX or Fetch API to communicate with the server asynchronously, fetching only the necessary data.
-   - **Advantages:** Reduced bandwidth usage and faster response times, especially for small updates or partial page changes.
+```bash
+npm install -g @angular/cli@latest
+```
 
-4. **Frameworks:**
+**Create Angular Project**-:
 
-   - **Characteristics:** SPAs are commonly built using JavaScript frameworks and libraries like Angular, React, or Vue.js.
-   - **Advantages:** These frameworks provide a structured way to build complex applications and manage state, making development more organized and scalable.
+```bash
+ng new project_name
+```
 
-5. **State Management:**
-   - **Characteristics:** SPAs often employ client-side state management to keep track of the application state without relying on server-side sessions.
-   - **Advantages:** Improved responsiveness as the application can update in real-time based on user interactions without reloading the entire page.
+**Bootstrapping Angular Application**-:
 
-**Traditional Web Applications:**
+Bootstrapping is the process of initializing or loading the Angular applications.
 
-1. **Page Loading:**
+ng serve-:
 
-   - **Characteristics:** Traditional web applications load a new HTML page from the server each time the user navigates to a different part of the application.
-   - **Advantages:** Simplicity in terms of navigation and straightforward server-side rendering.
+- Angular CLI saves the compile Angular application in the memory & directly starts it.
+- If we make any changes to our Angular app, Angular CLI will recompile & update the file
+- Angular CLI uses Webpack to traverse through our Angular app & it bundles JS & other files into one or more bundles.
+- Then Angular CLI also injects the bundled JS & CSS files in the index.html
 
-2. **User Experience:**
+- When the index.html file is loaded, Angular core libraries & third party libreries are alos loaded by that time.
+- Now Angular needs to locate the main entry point
+- **_index.html looks for --------> angular.json_**
+- **_angular.json -------> main.ts --> AppModule --> AppComponent_**
 
-   - **Characteristics:** Traditional web apps may experience full-page reloads during navigation, leading to a perceptible delay.
-   - **Advantages:** Suitable for content-heavy websites where SEO is a primary concern. Each page has a unique URL, making it easy to share and index by search engines.
-
-3. **Server Communication:**
-
-   - **Characteristics:** Traditional web apps typically rely on synchronous requests, leading to full page reloads.
-   - **Advantages:** Better support for browsers without JavaScript enabled. Compatibility with older browsers and simpler server-side architecture.
-
-4. **Frameworks:**
-
-   - **Characteristics:** Traditional web apps can be built using various server-side frameworks like Django, Ruby on Rails, or ASP.NET.
-   - **Advantages:** Well-suited for applications with more static content and simpler client-server interactions.
-
-5. **State Management:**
-   - **Characteristics:** Traditional web apps often rely on server-side sessions to manage user state.
-   - **Advantages:** Easier to implement secure session handling and server-side business logic.
-
-In summary, the choice between SPA and traditional web app architecture depends on factors such as the nature of the application, the desired user experience, the complexity of interactions, and development preferences. SPAs are well-suited for highly interactive and dynamic applications, while traditional web apps may be preferred for content-centric or SEO-focused websites.
+![ng-bootstrap](./ng-bootstrap.png)
