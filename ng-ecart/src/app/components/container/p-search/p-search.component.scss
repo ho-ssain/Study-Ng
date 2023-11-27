@@ -1,0 +1,38 @@
+.product-search {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.product-input {
+  width: 40%;
+  height: 5vh;
+  padding: 1px 10px;
+  outline: none;
+  border-radius: 2px;
+  background: #efefef;
+  border: #28282b 1px solid;
+  font-size: 18px;
+}
+
+.btn {
+  height: 5vh;
+  padding: 5px 10px;
+  border: none;
+}
+
+.btn-search {
+  padding: 12px 30px;
+  background: #28282b;
+  margin-left: -5px;
+  color: #fff;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: tomato;
+}
+
+.search-result-for {
+  margin: 20px auto;
+  padding: 10px 140px;
+}

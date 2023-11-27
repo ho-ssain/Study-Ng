@@ -80,3 +80,99 @@ ng serve-:
 - **_angular.json -------> main.ts --> AppModule --> AppComponent_**
 
 ![ng-bootstrap](./ng-bootstrap.png)
+
+**What is TypeScript**-:
+
+- TS is free & open-source programming language developed by Microsoft.
+- It is a super-set of JS
+- It has additional features, which do not exist in current version of JS Supported by most browsers.
+- TS is strongly typed, but JS is dynamically typed.
+- TS has some Object-Oriented features that we do not have in JS yet.
+- With TS, we can catch errors at compile time
+- TS code gets converted into JS code in compile time, because after all browser's can only understand JS
+
+**Understanding Component**-:
+
+Angular is a component-based JS framework for building client-side application.
+We create these application's with the help of components.
+
+**_A component is basically a small piece of User-interface._**
+
+When we build a angular app first we build bunch of components independent of each other and we to build a complex UI.
+
+**_Every angular app has at least one component_**
+which is refer to as root/App component.
+
+**_An Angular app is essentially a tree of components_**
+**_Combining all these components together makes an Angular UI_**
+
+**Create a Component**-:
+
+1. create a TS class & export it
+2. Decorate the class with @Component decorator
+3. Declare the class in main module file
+
+**View Template**-:
+
+The view template of a component is a form of HTML that tells Angular how to render a component.
+
+**Types of Component Selector**-:
+
+1. HTML tag/element
+   selector: 'app-nav'
+   used for component selection
+2. HTML attribute/property
+   selector: '[app-nav]'
+   It is mainly used for directives
+3. CSS class
+   selector: '.app-nav'
+4. CSS id
+   selector: '#app-nav'
+
+**Data Binding**-:
+
+Data binding allows us to communicate between a component class and it's view template & vice-versa
+So, we say that the flow of data from component class to view template or from view template to component class is called as data binding.
+
+So based on Data-flow we can divide data binding into two parts
+
+1. One-way Data Binding
+   There are three ways of this data binding
+
+   - _string interpolation_, {{}} (TS--> HTML)
+     interpolation is used to just display a piece of data in HTML, such as a title or a name.
+   - _property binding_, [] (TS-->HTML)
+     property binding let us bind a property of a DOM object, for example the hidden property, to some data value. This can let us show or hide a DOM element, or manipulate the DOM in some other way.
+     One thing must remember that
+     HTML attribute represent the inital value and it does not change
+     but a property represent the current value and it can change
+   - _event binding_, () (HTML--> TS)
+     An event is something that happens, often triggered by user actions or system events, that can be detected and responded to in a program.
+
+2. Two-way Data binding
+   data flow from TS--> HTML and at the same time HTML-->TS
+   [ngModel] (TS <--> HTML)
+
+**Directive**-:
+A directive is an instructions to the DOM.
+We use it these for Manipulate DOM, Change behaviour or Add/remove DOM elements.
+
+_Types_
+![directives](directives.png)
+
+- Component Directives is nothing but components itself in angular.
+  it is a directive with a template (other types of directive do not have it) . Components are also kind of instruction to the DOM. Whenever we use a component there we instruct angular to render the view template of tha component.
+
+- Attribute directive is used to change the appearance or behavior of a DOM element. ngStyle, ngClass
+
+- Structural directive is used to add or remove a DOM element on the Webpage ngIf, ngFor, ngSwitch
+
+**@input: custom Property Binding**-:
+
+In Angular, custom property binding refers to the process of binding a custom property of a child component to a property of its parent component. This enables communication between the parent and child components, allowing data to flow from the parent to the child.
+
+**@output: custom event Binding**-:
+
+In Angular, @Output is a decorator used to create a custom event binding in a child component, allowing it to emit events that the parent component can listen to. This mechanism enables communication from the child component back to its parent.
+
+In Angular, when you need to establish communication between components that are not directly related (i.e., they are not parent-child or sibling components), you can use a shared service, a state management library, or other architectural patterns. Here's an example using a shared service:
